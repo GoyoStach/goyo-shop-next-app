@@ -6,7 +6,6 @@ import {
   Button,
   Stack,
   Icon,
-  useColorModeValue,
   createIcon,
 } from '@chakra-ui/react';
 import { motion } from 'framer-motion';
@@ -36,7 +35,7 @@ const Masthead = () => {
             <br />
             <Text
               as={'span'}
-              color={'expresso.300'}
+              color={'cappucino.500'}
             >
               made for you !
             </Text>
@@ -61,11 +60,9 @@ const Masthead = () => {
           >
             <Link href={'/Shop'}>
               <Button
-                colorScheme={'expresso'}
-                bg={useColorModeValue('expresso.350', 'expresso.350')}
+                colorScheme={'cappucino'}
                 rounded={'full'}
                 px={6}
-                _hover={{ bg: 'expresso.300' }}
               >
                 Shop
               </Button>
@@ -77,10 +74,12 @@ const Masthead = () => {
             >
               Learn more
             </Button>
-            <Box visibility={['hidden', 'visible']}>
+            <Box
+              visibility={['hidden', 'visible']}
+              color={'accent.400'}
+            >
               <Icon
                 as={Arrow}
-                color={useColorModeValue('expresso.500', 'expresso.50')}
                 w={71}
                 position={'absolute'}
                 right={-71}
@@ -93,7 +92,6 @@ const Masthead = () => {
                 top={'-40px'}
                 transform={'rotate(10deg)'}
                 overflow={'visible'}
-                color={useColorModeValue('expresso.500', 'expresso.50')}
               >
                 Shipping offered <br />
                 at 100 € of puchase ! *

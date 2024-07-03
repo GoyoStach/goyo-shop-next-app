@@ -1,0 +1,22 @@
+[
+    {
+        "id": 1,
+        "name": "Coffee",
+        "description": "Superb Coffee !",
+        "brand": "Pandacoffee 1",
+        "price": "55",
+        "currency": "$",
+        "previousPrice": "70",
+        "images": ["/coffee.jpg"]
+      },
+      {
+        "id": 2,
+        "name": "Herbal Tea",
+        "description": "Soothing fragrance...",
+        "brand": "Tea Relax",
+        "price": "30",
+        "currency": "$",
+        "previousPrice": "90",
+        "images": ["/tea.jpg"]
+      }
+]

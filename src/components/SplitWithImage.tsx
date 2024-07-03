@@ -63,7 +63,10 @@ export default function SplitWithImage() {
             spacing={4}
             divider={
               <StackDivider
-                borderColor={useColorModeValue('expresso.750', 'expresso.150')}
+                borderColor={useColorModeValue(
+                  'cappucino.900',
+                  'cappucino.100',
+                )}
               />
             }
           >

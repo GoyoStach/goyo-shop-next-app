@@ -14,8 +14,8 @@ const config: ThemeConfig = {
 const styles = {
   global: (props: StyleFunctionProps) => ({
     body: {
-      color: mode('expresso.700', 'expresso.100')(props),
-      bg: mode('expresso.100', 'expresso.700')(props),
+      color: mode('cappucino.800', 'cappucino.100')(props),
+      bg: mode('cappucino.100', 'cappucino.800')(props),
     },
   }),
 };
@@ -28,18 +28,6 @@ const theme = extendTheme({
     body: `var(--font-mplus)`,
   },
   colors: {
-    brand: {
-      50: '#f6f4eb',
-      100: '#e1ddd1',
-      200: '#ccc6b5',
-      300: '#b8af97',
-      400: '#a49879',
-      500: '#8a7e5f',
-      600: '#6b624a',
-      700: '#4c4634',
-      800: '#2e2a1e',
-      900: '#110e03',
-    },
     expresso: {
       50: '#f6f4eb',
       100: '#DCD7C9',
@@ -56,6 +44,30 @@ const theme = extendTheme({
       650: '#3F4E4F',
       700: '#2C3639',
       750: '#110e03',
+    },
+    cappucino: {
+      50: '#f6f4eb',
+      100: '#e1ddd1',
+      200: '#ccc6b5',
+      300: '#b8af97',
+      400: '#a49879',
+      500: '#8a7e5f',
+      600: '#6b624a',
+      700: '#4c4634',
+      800: '#2C3639',
+      900: '#110e03',
+    },
+    accent: {
+      50: '#fff2e1',
+      100: '#f4dbbb',
+      200: '#ebc393',
+      300: '#e2ab6a',
+      400: '#d99340',
+      500: '#c07928',
+      600: '#955e1d',
+      700: '#6b4314',
+      800: '#412708',
+      900: '#1a0b00',
     },
   },
   styles: styles,

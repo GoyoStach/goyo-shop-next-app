@@ -1,3 +1,4 @@
+'use client';
 import {
   Flex,
   Avatar,
@@ -25,7 +26,7 @@ import Link from 'next/link';
 const Header = () => {
   const { colorMode, toggleColorMode } = useColorMode();
 
-  const [isConnected, setIsConnected] = useState(false);
+  const [isConnected, setIsConnected] = useState(true);
 
   const handleSignIn = () => {
     setIsConnected(!isConnected);
@@ -57,13 +58,13 @@ const Header = () => {
           >
             <Button
               onClick={toggleColorMode}
-              color={useColorModeValue('expresso.700', 'expresso.50')}
+              colorScheme="gray"
             >
               {colorMode === 'light' ? <MoonIcon /> : <SunIcon />}
             </Button>
 
             {isConnected ? (
-              <Menu>
+              <Menu colorScheme="cappucino">
                 <MenuButton
                   as={Button}
                   rounded={'full'}
@@ -74,7 +75,7 @@ const Header = () => {
                     color={colorMode === 'light' ? 'black' : 'white'}
                     size={'sm'}
                     name={'Goyo'}
-                    bg={useColorModeValue('expresso.250', 'expresso.350')}
+                    bg={useColorModeValue('cappucino.200', 'cappucino.300')}
                   />
                 </MenuButton>
                 <MenuList alignItems={'center'}>
@@ -94,7 +95,7 @@ const Header = () => {
             ) : (
               <Button
                 onClick={() => handleSignIn()}
-                color={useColorModeValue('expresso.700', 'expresso.50')}
+                colorScheme="gray"
               >
                 Sign In
               </Button>

@@ -21,8 +21,8 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 ## TODO :
 
-- [ ] Define the color theme in chakra ui ( Most Likely cappuchino ) Smart Swatch
-- [ ] Define Page structure 
+- [x] Define the color theme in chakra ui ( Most Likely cappuchino ) Smart Swatch
+- [/] Define Page structure 
 - [ ] Next Intl
 - [ ] Lucia Auth
 - [ ] Host on VPS with coolify
@@ -31,7 +31,7 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 ## Pages Structure :
 
 - [ ] Landing Page
-    - [ ] Masthead
+    - [x] Masthead
     - [x] 2 columns with Image ( https://chakra-templates.vercel.app/page-sections/features)
     - [x] Testimonials (https://chakra-templates.vercel.app/page-sections/testimonials)
     - [ ] Simple Grid with some products (4 Most popular)
@@ -42,7 +42,8 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
     - [ ] (Optionnal) Changing color of the website
     - [ ] Changing basics settings of the account 
 - [ ] Shop
-    - [ ] Page with all products
+    - [x] Page with all products
+    - [ ] Shared layout with landing page ( Header, Footer)
     - [ ] Page with categories
     - [ ] Single page product
 - [ ] Cart component

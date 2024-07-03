@@ -1,3 +1,4 @@
+'use client';
 import {
   Box,
   chakra,
@@ -67,10 +68,6 @@ const Footer = () => {
     <Container
       p={2}
       maxW={'6xl'}
-      bgGradient={useColorModeValue(
-        'linear(to-b, expresso.150, expresso.100)',
-        'linear(to-b, expresso.650, expresso.700)',
-      )}
     >
       <Container
         as={Stack}
@@ -93,7 +90,7 @@ const Footer = () => {
       <Box
         borderTopWidth={1}
         borderStyle={'solid'}
-        borderColor={useColorModeValue('gray.100', 'gray.700')}
+        borderColor={useColorModeValue('cappucino.200', 'cappucino.700')}
       >
         <Container
           as={Stack}

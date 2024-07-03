@@ -26,7 +26,7 @@ const TestimonialContent = (props: Props) => {
 
   return (
     <Stack
-      bg={useColorModeValue('expresso.50', 'expresso.750')}
+      bg={useColorModeValue('cappucino.200', 'cappucino.900')}
       boxShadow={'lg'}
       p={8}
       rounded={'xl'}
@@ -43,7 +43,7 @@ const TestimonialContent = (props: Props) => {
         borderRightWidth: 16,
         borderTop: 'solid',
         borderTopWidth: 16,
-        borderTopColor: useColorModeValue('white', 'gray.800'),
+        borderTopColor: useColorModeValue('cappucino.200', 'cappucino.900'),
         pos: 'absolute',
         bottom: '-16px',
         left: '50%',
@@ -62,7 +62,7 @@ const TestimonialHeading = (props: Props) => {
     <Heading
       as={'h3'}
       fontSize={'xl'}
-      color={'expresso.300'}
+      color={'accent.400'}
     >
       {children}
     </Heading>
@@ -107,12 +107,7 @@ const TestimonialAvatar = ({
         align={'center'}
       >
         <Text fontWeight={600}>{name}</Text>
-        <Text
-          fontSize={'sm'}
-          color={useColorModeValue('expresso.550', 'expresso.250')}
-        >
-          {title}
-        </Text>
+        <Text fontSize={'sm'}>{title}</Text>
       </Stack>
     </Flex>
   );
@@ -120,12 +115,7 @@ const TestimonialAvatar = ({
 
 export default function WithSpeechBubbles() {
   return (
-    <Box
-      bgGradient={useColorModeValue(
-        'linear(to-b, expresso.100, expresso.150)',
-        'linear(to-b, expresso.700, expresso.650)',
-      )}
-    >
+    <Box>
       <Container
         maxW={'7xl'}
         py={16}
@@ -136,8 +126,8 @@ export default function WithSpeechBubbles() {
           spacing={0}
           align={'center'}
         >
-          <Heading>Our Clients Speak</Heading>
-          <Text>We have clients around the world</Text>
+          <Heading>Word from our clients </Heading>
+          <Text>From all around the world</Text>
         </Stack>
         <Stack
           direction={{ base: 'column', md: 'row' }}
