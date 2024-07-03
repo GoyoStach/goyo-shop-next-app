@@ -36,12 +36,12 @@ const Masthead = () => {
             <br />
             <Text
               as={'span'}
-              color={'green.400'}
+              color={'expresso.300'}
             >
               made for you !
             </Text>
           </Heading>
-          <Text color={'gray.500'}>
+          <Text>
             You can put any brief description of your shop here. I advise to put
             arround 3 lines of content so that the text is not too long and
             render well on any device <br />
@@ -57,16 +57,15 @@ const Masthead = () => {
             as={motion.div}
             variants={slideIn('right', 'Inertia', '0', '2')}
             whileInView={'show'}
+            // overflowX={'hidden'}
           >
             <Link href={'/Shop'}>
               <Button
-                colorScheme={'green'}
-                bg={'green.400'}
+                colorScheme={'expresso'}
+                bg={useColorModeValue('expresso.350', 'expresso.350')}
                 rounded={'full'}
                 px={6}
-                _hover={{
-                  bg: 'green.500',
-                }}
+                _hover={{ bg: 'expresso.300' }}
               >
                 Shop
               </Button>
@@ -81,7 +80,7 @@ const Masthead = () => {
             <Box visibility={['hidden', 'visible']}>
               <Icon
                 as={Arrow}
-                color={useColorModeValue('gray.800', 'gray.300')}
+                color={useColorModeValue('expresso.500', 'expresso.50')}
                 w={71}
                 position={'absolute'}
                 right={-71}
@@ -90,9 +89,11 @@ const Masthead = () => {
               <Text
                 fontSize={'lg'}
                 position={'absolute'}
-                right={'-150px'}
+                right={'-200px'}
                 top={'-40px'}
                 transform={'rotate(10deg)'}
+                overflow={'visible'}
+                color={useColorModeValue('expresso.500', 'expresso.50')}
               >
                 Shipping offered <br />
                 at 100 € of puchase ! *

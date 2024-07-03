@@ -9,6 +9,7 @@ import {
   MenuDivider,
   Stack,
   useColorMode,
+  useColorModeValue,
   Center,
   Heading,
   Container,
@@ -54,7 +55,10 @@ const Header = () => {
             direction={'row'}
             spacing={7}
           >
-            <Button onClick={toggleColorMode}>
+            <Button
+              onClick={toggleColorMode}
+              color={useColorModeValue('expresso.700', 'expresso.50')}
+            >
               {colorMode === 'light' ? <MoonIcon /> : <SunIcon />}
             </Button>
 
@@ -70,6 +74,7 @@ const Header = () => {
                     color={colorMode === 'light' ? 'black' : 'white'}
                     size={'sm'}
                     name={'Goyo'}
+                    bg={useColorModeValue('expresso.250', 'expresso.350')}
                   />
                 </MenuButton>
                 <MenuList alignItems={'center'}>
@@ -87,7 +92,12 @@ const Header = () => {
                 </MenuList>
               </Menu>
             ) : (
-              <Button onClick={() => handleSignIn()}>Sign In</Button>
+              <Button
+                onClick={() => handleSignIn()}
+                color={useColorModeValue('expresso.700', 'expresso.50')}
+              >
+                Sign In
+              </Button>
             )}
           </Stack>
         </Flex>

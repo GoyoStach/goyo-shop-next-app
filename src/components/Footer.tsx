@@ -67,6 +67,10 @@ const Footer = () => {
     <Container
       p={2}
       maxW={'6xl'}
+      bgGradient={useColorModeValue(
+        'linear(to-b, expresso.150, expresso.100)',
+        'linear(to-b, expresso.650, expresso.700)',
+      )}
     >
       <Container
         as={Stack}
