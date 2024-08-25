@@ -43,7 +43,7 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
     - [ ] Changing basics settings of the account 
 - [ ] Shop
     - [x] Page with all products
-    - [ ] Shared layout with landing page ( Header, Footer)
+    - [x] Shared layout with landing page (Header, Footer)
     - [ ] Page with categories
     - [ ] Single page product
 - [ ] Cart component

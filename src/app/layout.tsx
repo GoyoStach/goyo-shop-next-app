@@ -3,6 +3,8 @@ import '@/app/styles/globals.css';
 import React from 'react';
 import { Providers } from '@/app/providers';
 import { fonts } from '@/app/styles/font';
+import Header from '@/components/Header';
+import Footer from '@/components/Footer';
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -20,7 +22,11 @@ export default function RootLayout({
       className={`${fonts.mplus.variable} ${fonts.silkscreen.variable}`}
     >
       <body>
-        <Providers>{children}</Providers>
+        <Providers>
+          <Header />
+          {children}
+          <Footer />
+        </Providers>
       </body>
     </html>
   );

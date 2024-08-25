@@ -1,15 +1,15 @@
+import { slideIn } from '@/utils/motion';
 import {
   Box,
-  Heading,
-  Container,
-  Text,
   Button,
-  Stack,
+  Container,
+  Heading,
   Icon,
+  Stack,
+  Text,
   createIcon,
 } from '@chakra-ui/react';
 import { motion } from 'framer-motion';
-import { slideIn } from '@/utils/motion';
 import Link from 'next/link';
 
 const Masthead = () => {
@@ -88,7 +88,7 @@ const Masthead = () => {
               <Text
                 fontSize={'lg'}
                 position={'absolute'}
-                right={'-200px'}
+                right={'-220px'}
                 top={'-40px'}
                 transform={'rotate(10deg)'}
                 overflow={'visible'}

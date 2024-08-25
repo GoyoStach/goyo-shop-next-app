@@ -1,26 +1,30 @@
-import ProductGrid from '@/components/shop/ProductGrid';
 import { ProductSimple } from '@/types/Product.type';
 import { delay } from '@/utils/delay';
-import { NextPage } from 'next';
 import { promises as fs } from 'fs';
+import { type NextPage } from 'next';
+import { Suspense } from 'react';
+import ProductPageContent from './_Island/ProductPageContent';
 
 const getData = async () => {
-  await delay(2000);
+  await delay(1000);
   const mockData = await fs.readFile(
     process.cwd() + '/src/mockData/products.json',
     'utf8',
   );
   const data: ProductSimple[] = JSON.parse(mockData);
-  return data;
+  await delay(3000);
+  return data[0];
 };
 
-const ShopPage: NextPage = async () => {
+const IndividualProductPage: NextPage = async () => {
   const data = await getData();
   return (
     <main>
-      <ProductGrid data={data} />
+      <Suspense fallback={<p>Loading...</p>}>
+        <ProductPageContent data={data} />
+      </Suspense>
     </main>
   );
 };
 
-export default ShopPage;
+export default IndividualProductPage;

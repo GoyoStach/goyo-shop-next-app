@@ -20,7 +20,7 @@ const ProductSimpleComponent: FC<Props> = ({ product }) => {
     <Center py={12}>
       <Link
         href={{
-          pathname: `/Shop/product/${product.id}`,
+          pathname: `/Shop/${product.id}`,
         }}
       >
         <Box
@@ -28,7 +28,7 @@ const ProductSimpleComponent: FC<Props> = ({ product }) => {
           p={6}
           maxW={'330px'}
           w={'full'}
-          bg={useColorModeValue('white', 'gray.800')}
+          bg={useColorModeValue('cappucino.50', 'gray.800')}
           boxShadow={'2xl'}
           rounded={'lg'}
           pos={'relative'}
@@ -75,7 +75,7 @@ const ProductSimpleComponent: FC<Props> = ({ product }) => {
             textAlign={'center'}
           >
             <Text
-              color={'gray.500'}
+              color={'accent.400'}
               fontSize={'sm'}
               textTransform={'uppercase'}
             >
@@ -88,25 +88,21 @@ const ProductSimpleComponent: FC<Props> = ({ product }) => {
             >
               {product.name}
             </Heading>
-            {/*
-              <Stack
-                direction={'row'}
-                align={'center'}
+
+            <Stack
+              direction={'row'}
+              align={'center'}
+            >
+              <Text
+                fontWeight={800}
+                fontSize={'xl'}
               >
-                
-                <Text
-                  fontWeight={800}
-                  fontSize={'xl'}
-                >
-                  {product.price} €
-                </Text>
-                <Text
-                  textDecoration={'line-through'}
-                  color={'gray.600'}
-                >
-                  {product.previousPrice} €
+                {product.price} €
               </Text>
-              </Stack>*/}
+              <Text textDecoration={'line-through'}>
+                {product.previousPrice} €
+              </Text>
+            </Stack>
           </Stack>
         </Box>
       </Link>
