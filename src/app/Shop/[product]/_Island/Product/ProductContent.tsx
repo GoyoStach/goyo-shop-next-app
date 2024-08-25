@@ -4,13 +4,13 @@ import ProductIndividual from '@/components/shop/ProductIndividual';
 import { ProductSimple } from '@/types/Product.type';
 import { zoomIn } from '@/utils/motion';
 import {
-  Container,
-  Flex,
   Breadcrumb,
   BreadcrumbItem,
   BreadcrumbLink,
-  Heading,
   Center,
+  Container,
+  Flex,
+  Heading,
 } from '@chakra-ui/react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
@@ -19,7 +19,7 @@ type Props = {
   data: ProductSimple;
 };
 
-const ProductPageContent: React.FC<Props> = ({ data }) => {
+const ProductContent: React.FC<Props> = ({ data }) => {
   return (
     <Flex
       direction="column"
@@ -55,4 +55,4 @@ const ProductPageContent: React.FC<Props> = ({ data }) => {
   );
 };
 
-export default ProductPageContent;
+export default ProductContent;

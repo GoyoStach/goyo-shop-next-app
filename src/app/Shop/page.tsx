@@ -1,8 +1,8 @@
 import ProductGrid from '@/components/shop/ProductGrid';
 import { ProductSimple } from '@/types/Product.type';
 import { delay } from '@/utils/delay';
-import { NextPage } from 'next';
 import { promises as fs } from 'fs';
+import { NextPage } from 'next';
 
 const getData = async () => {
   await delay(2000);
@@ -14,6 +14,9 @@ const getData = async () => {
   return data;
 };
 
+/**As this page is made with only one "Island", it wont be necessary to use streaming and PPR.
+ * We are here using SSR and the built in suspense strategies with the loading file.
+ */
 const ShopPage: NextPage = async () => {
   const data = await getData();
   return (
