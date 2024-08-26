@@ -35,6 +35,7 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
     - [x] 2 columns with Image ( https://chakra-templates.vercel.app/page-sections/features)
     - [x] Testimonials (https://chakra-templates.vercel.app/page-sections/testimonials)
     - [ ] Simple Grid with some products (4 Most popular)
+    - [ ] Convert page to be PPR ready and optimized
 - [ ] Footer
 - [ ] Dashboard for connected user
     - [ ] Previous Commands
@@ -46,4 +47,9 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
     - [x] Shared layout with landing page (Header, Footer)
     - [ ] Page with categories
     - [ ] Single page product
+        - [x] Infos regarding the product.
+        - [ ] Loading squeleton for product
+        - [ ] Caroussel of images that will swap the main one.
+        - [ ] See more
+        
 - [ ] Cart component

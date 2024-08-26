@@ -1,28 +1,48 @@
 'use client';
-import { ProductSimple } from '@/types/Product.type';
+import { ProductDetails } from '@/types/Product.type';
+import { InfoIcon } from '@chakra-ui/icons';
 import {
   Box,
   Center,
-  useColorModeValue,
-  Heading,
-  Text,
-  Stack,
-  Image,
+  Divider,
   Grid,
   GridItem,
+  Heading,
+  Icon,
+  Image,
+  Stack,
+  Text,
+  useColorModeValue,
 } from '@chakra-ui/react';
 import type { FC } from 'react';
+import { BiSolidCoffeeBean } from 'react-icons/bi';
+import { FaEarthAfrica } from 'react-icons/fa6';
+import { GiCoffeePot, GiMountaintop } from 'react-icons/gi';
 
 type Props = {
-  data: ProductSimple;
+  data: ProductDetails;
+};
+
+const mapValueToIcon = (value: string) => {
+  switch (value) {
+    case 'coffee_pot':
+      return GiCoffeePot;
+    case 'coffee':
+      return BiSolidCoffeeBean;
+    case 'africa':
+      return FaEarthAfrica;
+    case 'mountain':
+      return GiMountaintop;
+    default:
+      break;
+  }
 };
 
 const ProductIndividual: FC<Props> = ({ data }) => {
-  console.log(data);
   return (
     <Center p={12}>
       <Grid
-        templateColumns={{ base: 'repeat(1, 1fr)', xl: 'repeat(2, 1fr)' }}
+        templateColumns={{ base: 'repeat(1, 1fr)', lg: 'repeat(2, 1fr)' }}
         role={'group'}
         p={6}
         w={'full'}
@@ -36,7 +56,7 @@ const ProductIndividual: FC<Props> = ({ data }) => {
           rounded={'lg'}
           mt={-12}
           pos={'relative'}
-          height={{ base: 230, xl: 230 * 2 }}
+          height={{ base: 230, lg: 230 * 2 }}
           justifyContent={'center'}
           display="flex"
           _after={{
@@ -61,8 +81,8 @@ const ProductIndividual: FC<Props> = ({ data }) => {
         >
           <Image
             rounded={'lg'}
-            height={{ base: 230, xl: 230 * 2 }}
-            width={{ base: 282, xl: 282 * 2 }}
+            height={{ base: 230, lg: 230 * 2 }}
+            width={{ base: 282, lg: 282 * 2 }}
             objectFit={'cover'}
             src={`/mockImages${data.images[0]}`}
             alt={data.name}
@@ -97,10 +117,17 @@ const ProductIndividual: FC<Props> = ({ data }) => {
               {data.previousPrice} {data.currency}
             </Text>
           </Stack>
+          <Text
+            fontSize={'sm'}
+            fontStyle={'italic'}
+            align={['justify']}
+          >
+            {data.description}
+          </Text>
         </Stack>
         {/**Feature descriptions */}
         <GridItem
-          colSpan={{ base: 1, xl: 2 }}
+          colSpan={{ base: 1, lg: 2 }}
           paddingY={[2, 4, 6, 8, 10]}
         >
           <Heading
@@ -112,33 +139,55 @@ const ProductIndividual: FC<Props> = ({ data }) => {
             Features
           </Heading>
         </GridItem>
-        {/* {data.attributes.details?.map((e) => {
-          return (
-            <Stack
-              p={6}
-              key={e.id}
-              justifyContent={'center'}
-              display={'flex'}
-              alignItems={'center'}
-            >
-              <Text
-                color={'gray.500'}
-                fontSize={'lg'}
-              >
-                {e.value}
-              </Text>
-              <Image
-                rounded={'lg'}
-                height={[24, 24, 24, 36, 48]}
-                width={[24, 24, 24, 36, 48]}
-                objectFit={'cover'}
-                src={e.icon}
-                alt={e.value}
-                fallbackSrc={'/placeholder.jpg'}
-              />
-            </Stack>
-          );
-        })} */}
+        <Box>
+          <Grid
+            templateColumns={{ base: 'repeat(2, 1fr)' }}
+            gap={2}
+          >
+            {data.features.map((e, _index) => {
+              return (
+                <Stack
+                  padding={2}
+                  direction={'row'}
+                  alignItems={'center'}
+                  key={_index}
+                  rounded={'lg'}
+                  //bg={useColorModeValue('cappucino.50', 'gray.700')}
+                >
+                  {e.icon ? (
+                    <Icon
+                      as={mapValueToIcon(e.icon)}
+                      boxSize={8}
+                    />
+                  ) : (
+                    <InfoIcon boxSize={8} />
+                  )}
+                  <Divider orientation="vertical" />
+                  <Stack
+                    direction={'column'}
+                    gap={0}
+                    textAlign={'start'}
+                    maxW={'200px'}
+                  >
+                    <Text
+                      color={'gray.500'}
+                      fontSize={'lg'}
+                      overflow={'hidden'}
+                    >
+                      {e.title}
+                    </Text>
+                    <Text
+                      color={'gray.500'}
+                      fontSize={'sm'}
+                    >
+                      {e.description}
+                    </Text>
+                  </Stack>
+                </Stack>
+              );
+            })}
+          </Grid>
+        </Box>
       </Grid>
     </Center>
   );

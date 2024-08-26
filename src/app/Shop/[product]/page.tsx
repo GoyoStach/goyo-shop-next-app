@@ -8,7 +8,6 @@ import { Suspense } from 'react';
 const IndividualProductPage: NextPage = async () => {
   return (
     <main>
-      <h1>Static rendered title</h1>
       <Suspense fallback={<p>Loading product details</p>}>
         <Product />
       </Suspense>

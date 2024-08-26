@@ -1,7 +1,7 @@
 'use client';
 
 import ProductIndividual from '@/components/shop/ProductIndividual';
-import { ProductSimple } from '@/types/Product.type';
+import { ProductDetails } from '@/types/Product.type';
 import { zoomIn } from '@/utils/motion';
 import {
   Breadcrumb,
@@ -16,7 +16,7 @@ import { motion } from 'framer-motion';
 import Link from 'next/link';
 
 type Props = {
-  data: ProductSimple;
+  data: ProductDetails;
 };
 
 const ProductContent: React.FC<Props> = ({ data }) => {

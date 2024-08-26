@@ -1,25 +1,25 @@
 'use client';
+import { MoonIcon, SunIcon } from '@chakra-ui/icons';
 import {
-  Flex,
   Avatar,
   Button,
+  Center,
+  Container,
+  Flex,
+  Heading,
   Menu,
   MenuButton,
-  MenuList,
-  MenuItem,
   MenuDivider,
+  MenuItem,
+  MenuList,
   Stack,
   useColorMode,
   useColorModeValue,
-  Center,
-  Heading,
-  Container,
 } from '@chakra-ui/react';
-import { MoonIcon, SunIcon } from '@chakra-ui/icons';
 
-import { useState } from 'react';
-import { motion } from 'framer-motion';
 import { navVariants } from '@/utils/motion';
+import { motion } from 'framer-motion';
+import { useState } from 'react';
 
 import Link from 'next/link';
 

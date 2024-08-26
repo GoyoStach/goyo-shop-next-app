@@ -1,0 +1,34 @@
+{
+    "brand": "Panda brew better",
+    "currency": "$",
+    "description": "This Rwanda coffee is known for its bright acidity and rich flavor profile, often featuring notes of red fruits, citrus, and floral undertones. Grown in the high-altitude regions of Rwanda, the beans are meticulously processed, resulting in a clean, well-balanced cup with a smooth finish. This coffee's complexity and vibrancy make it a favorite among specialty coffee enthusiasts.",
+    "features": [
+        {
+            "description": "Rwanda",
+            "title": "Region",
+            "icon":"africa"
+        },
+        {
+            "description": "+1800 m",
+            "title": "Elevation",
+            "icon":"mountain"
+        },
+        {
+            "description": "Bourbon",
+            "title": "Type",
+            "icon":"coffee"
+        },
+        {
+            "description": "Filter",
+            "title": "Recommended brewing",
+            "icon":"coffee_pot"
+        }
+    ],
+    "id": 1,
+    "images": [
+        "/coffee.jpg"
+    ],
+    "name": "Coffee",
+    "previousPrice": "70",
+    "price": "5.5"
+}
