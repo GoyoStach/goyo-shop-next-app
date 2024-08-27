@@ -2,14 +2,14 @@
 
 import {
   Container,
-  SimpleGrid,
-  Image,
   Flex,
   Heading,
-  Text,
+  Icon,
+  Image,
+  SimpleGrid,
   Stack,
   StackDivider,
-  Icon,
+  Text,
   useColorModeValue,
 } from '@chakra-ui/react';
 import { ReactElement } from 'react';
@@ -56,8 +56,8 @@ export default function SplitWithImage() {
         <Stack spacing={4}>
           <Heading>About our vision</Heading>
           <Text fontSize={'lg'}>
-            You can list some core values about your brand. Put the emphasis on
-            your strong points as a brand !
+            Height of Coffee invites customers to savor a thoughtfully made
+            beverage that celebrates both tradition and innovation!
           </Text>
           <Stack
             spacing={4}
@@ -92,7 +92,7 @@ export default function SplitWithImage() {
                 />
               }
               iconBg={useColorModeValue('green.100', 'green.900')}
-              text={'Made in France'}
+              text={'Torrefied in France'}
             />
             <Feature
               icon={
@@ -104,7 +104,7 @@ export default function SplitWithImage() {
                 />
               }
               iconBg={useColorModeValue('purple.100', 'purple.900')}
-              text={'Cruelty free'}
+              text={'Artisanal practices'}
             />
           </Stack>
         </Stack>

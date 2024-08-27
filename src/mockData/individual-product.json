@@ -1,12 +1,12 @@
 {
     "brand": "Panda brew better",
     "currency": "$",
-    "description": "This Rwanda coffee is known for its bright acidity and rich flavor profile, often featuring notes of red fruits, citrus, and floral undertones. Grown in the high-altitude regions of Rwanda, the beans are meticulously processed, resulting in a clean, well-balanced cup with a smooth finish. This coffee's complexity and vibrancy make it a favorite among specialty coffee enthusiasts.",
+    "description": "This Chinese coffee, grown at an elevation of 1,800 meters in the lush, mountainous regions, offers a unique and refined flavor profile. The high altitude contributes to its complex notes, with a balanced acidity and a smooth, rich body. You’ll find subtle hints of floral and fruity undertones, making each cup an exquisite experience. The cool, misty climate at this elevation allows the beans to develop slowly, resulting in a coffee that is both vibrant and deeply aromatic, perfect for those who appreciate a sophisticated and distinctive brew.",
     "features": [
         {
-            "description": "Rwanda",
+            "description": "China",
             "title": "Region",
-            "icon":"africa"
+            "icon":"asia"
         },
         {
             "description": "+1800 m",
@@ -28,7 +28,7 @@
     "images": [
         "/coffee.jpg"
     ],
-    "name": "Coffee",
-    "previousPrice": "70",
-    "price": "5.5"
+    "name": "Coffee - Panda Brew Better",
+    "previousPrice": "18",
+    "price": "12"
 }

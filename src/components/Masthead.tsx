@@ -31,20 +31,25 @@ const Masthead = () => {
             variants={slideIn('left', 'Inertia', '0', '2')}
             whileInView={'show'}
           >
-            Products
+            Coffee flavors
             <br />
             <Text
               as={'span'}
               color={'cappucino.500'}
             >
-              made for you !
+              to new height !
             </Text>
           </Heading>
           <Text>
-            You can put any brief description of your shop here. I advise to put
-            arround 3 lines of content so that the text is not too long and
-            render well on any device <br />
-            Happy shopping !
+            <Text
+              as={'span'}
+              color={'accent.400'}
+            >
+              Height of coffee
+            </Text>{' '}
+            emphasizes craftsmanship & quality. We combines modern design with a
+            warm, artisanal feel, appealing to coffee enthusiasts who value both
+            taste and experience.
           </Text>
           <Stack
             direction={'column'}
@@ -94,7 +99,7 @@ const Masthead = () => {
                 overflow={'visible'}
               >
                 Shipping offered <br />
-                at 100 € of puchase ! *
+                at 60 € of puchase ! *
               </Text>
             </Box>
           </Stack>

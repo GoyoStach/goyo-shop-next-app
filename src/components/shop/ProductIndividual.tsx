@@ -6,17 +6,21 @@ import {
   Center,
   Divider,
   Grid,
-  GridItem,
   Heading,
   Icon,
   Image,
+  Slider,
+  SliderFilledTrack,
+  SliderMark,
+  SliderThumb,
+  SliderTrack,
   Stack,
   Text,
   useColorModeValue,
 } from '@chakra-ui/react';
-import type { FC } from 'react';
+import { useState, type FC } from 'react';
 import { BiSolidCoffeeBean } from 'react-icons/bi';
-import { FaEarthAfrica } from 'react-icons/fa6';
+import { FaEarthAfrica, FaEarthAsia } from 'react-icons/fa6';
 import { GiCoffeePot, GiMountaintop } from 'react-icons/gi';
 
 type Props = {
@@ -25,6 +29,8 @@ type Props = {
 
 const mapValueToIcon = (value: string) => {
   switch (value) {
+    case 'asia':
+      return FaEarthAsia;
     case 'coffee_pot':
       return GiCoffeePot;
     case 'coffee':
@@ -39,6 +45,12 @@ const mapValueToIcon = (value: string) => {
 };
 
 const ProductIndividual: FC<Props> = ({ data }) => {
+  const [sliderValue, setSliderValue] = useState<number>(2);
+  const labelStyles = {
+    mt: '2',
+    ml: '-2.5',
+    fontSize: 'sm',
+  };
   return (
     <Center p={12}>
       <Grid
@@ -111,7 +123,7 @@ const ProductIndividual: FC<Props> = ({ data }) => {
               fontWeight={800}
               fontSize={'xl'}
             >
-              {data.price} {data.currency}
+              {parseInt(data.price ?? '0') * sliderValue} {data.currency}
             </Text>
             <Text textDecoration={'line-through'}>
               {data.previousPrice} {data.currency}
@@ -125,21 +137,16 @@ const ProductIndividual: FC<Props> = ({ data }) => {
             {data.description}
           </Text>
         </Stack>
-        {/**Feature descriptions */}
-        <GridItem
-          colSpan={{ base: 1, lg: 2 }}
-          paddingY={[2, 4, 6, 8, 10]}
-        >
+        <Box>
           <Heading
             fontSize={'2xl'}
             fontWeight={500}
             justifyContent={'center'}
             display={'flex'}
+            paddingY={[2, 4, 6, 8, 10]}
           >
             Features
           </Heading>
-        </GridItem>
-        <Box>
           <Grid
             templateColumns={{ base: 'repeat(2, 1fr)' }}
             gap={2}
@@ -152,17 +159,23 @@ const ProductIndividual: FC<Props> = ({ data }) => {
                   alignItems={'center'}
                   key={_index}
                   rounded={'lg'}
-                  //bg={useColorModeValue('cappucino.50', 'gray.700')}
                 >
                   {e.icon ? (
                     <Icon
                       as={mapValueToIcon(e.icon)}
                       boxSize={8}
+                      color={'cappucino.500'}
                     />
                   ) : (
                     <InfoIcon boxSize={8} />
                   )}
-                  <Divider orientation="vertical" />
+                  <Divider
+                    orientation="vertical"
+                    borderColor={useColorModeValue(
+                      'cappucino.900',
+                      'cappucino.50',
+                    )}
+                  />
                   <Stack
                     direction={'column'}
                     gap={0}
@@ -170,23 +183,77 @@ const ProductIndividual: FC<Props> = ({ data }) => {
                     maxW={'200px'}
                   >
                     <Text
-                      color={'gray.500'}
                       fontSize={'lg'}
                       overflow={'hidden'}
                     >
                       {e.title}
                     </Text>
-                    <Text
-                      color={'gray.500'}
-                      fontSize={'sm'}
-                    >
-                      {e.description}
-                    </Text>
+                    <Text fontSize={'sm'}>{e.description}</Text>
                   </Stack>
                 </Stack>
               );
             })}
           </Grid>
+        </Box>
+        <Box
+          width={'full'}
+          height={'full'}
+          paddingX={[2, 4, 6, 8, 10]}
+        >
+          <Heading
+            fontSize={'2xl'}
+            fontWeight={500}
+            justifyContent={'center'}
+            display={'flex'}
+            paddingY={[2, 4, 6, 8, 10]}
+          >
+            Quantity
+          </Heading>
+          <Slider
+            aria-label="slider-ex-6"
+            onChange={(val) => setSliderValue(val)}
+            min={1}
+            max={4}
+            step={1}
+            defaultValue={2}
+          >
+            <SliderMark
+              value={1}
+              {...labelStyles}
+            >
+              250g
+            </SliderMark>
+            <SliderMark
+              value={2}
+              {...labelStyles}
+            >
+              500g
+            </SliderMark>
+            <SliderMark
+              value={3}
+              {...labelStyles}
+            >
+              750g
+            </SliderMark>
+            <SliderMark
+              value={4}
+              {...labelStyles}
+            >
+              1Kg
+            </SliderMark>
+            <SliderTrack bg={'cappucino.100'}>
+              <SliderFilledTrack bg={'cappucino.500'} />
+            </SliderTrack>
+            <SliderThumb
+              boxSize={6}
+              bg={'cappucino.100'}
+            >
+              <Box
+                color="cappucino.500"
+                as={BiSolidCoffeeBean}
+              />
+            </SliderThumb>
+          </Slider>
         </Box>
       </Grid>
     </Center>

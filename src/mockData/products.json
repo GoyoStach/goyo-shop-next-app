@@ -1,18 +1,16 @@
 [
     {
         "id": 1,
-        "name": "Coffee",
-        "description": "Superb Coffee !",
-        "brand": "Pandacoffee 1",
-        "price": "55",
+        "name": "Coffee - Panda Brew Better",
+        "brand": "Panda Brew Better",
+        "price": "12",
         "currency": "$",
-        "previousPrice": "70",
+        "previousPrice": "18",
         "images": ["/coffee.jpg"]
       },
       {
         "id": 2,
         "name": "Herbal Tea",
-        "description": "Soothing fragrance...",
         "brand": "Tea Relax",
         "price": "30",
         "currency": "$",

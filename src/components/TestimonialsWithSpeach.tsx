@@ -1,13 +1,13 @@
 'use client';
 
 import {
+  Avatar,
   Box,
+  Container,
   Flex,
   Heading,
-  Text,
   Stack,
-  Container,
-  Avatar,
+  Text,
   useColorModeValue,
 } from '@chakra-ui/react';
 
@@ -126,7 +126,7 @@ export default function WithSpeechBubbles() {
           spacing={0}
           align={'center'}
         >
-          <Heading>Word from our clients </Heading>
+          <Heading>Word from our partners </Heading>
           <Text>From all around the world</Text>
         </Stack>
         <Stack
@@ -137,33 +137,31 @@ export default function WithSpeechBubbles() {
             <TestimonialContent>
               <TestimonialHeading>Efficient Delivery</TestimonialHeading>
               <TestimonialText>
-                Received my items in less than a week ! I can&apos;t believe an
-                artisanal company can fullfill such deadlines !
+                Received my items in less than a week ! In a domain such as
+                coffee roasting where freshness is everything, I can only praise
+                such efficiency !
               </TestimonialText>
             </TestimonialContent>
             <TestimonialAvatar
-              src={
-                'https://images.unsplash.com/photo-1586297135537-94bc9ba060aa?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=100&q=80'
-              }
-              name={'Jane Cooper'}
-              title={'CEO at ABC Corporation'}
+              src={'/avatar/vicky.jpg'}
+              name={'Vicky Becqre'}
+              title={'Head Barista in Melbourne'}
             />
           </Testimonial>
           <Testimonial>
             <TestimonialContent>
-              <TestimonialHeading>Great Durability !</TestimonialHeading>
+              <TestimonialHeading>Variety of Flavors !</TestimonialHeading>
               <TestimonialText>
-                My kid played in the mud and dirtied his pants. After a quick
-                wash the pants are like new ! Such a bliss to not be worried
-                about his items lasting !
+                From bold blends to fruity notes and unique seasonal options,
+                there&apos;s something for every taste. It&apos;s a coffee
+                lover&apos;s dream, offering endless choices and high quality
+                with every cup!
               </TestimonialText>
             </TestimonialContent>
             <TestimonialAvatar
-              src={
-                'https://images.unsplash.com/photo-1586297135537-94bc9ba060aa?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=100&q=80'
-              }
-              name={'Jane Cooper'}
-              title={'CEO at ABC Corporation'}
+              src={'/avatar/bryan.jpg'}
+              name={'Bryan Legrand'}
+              title={'Customer & Coffee enthusiast'}
             />
           </Testimonial>
         </Stack>

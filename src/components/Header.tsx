@@ -48,7 +48,8 @@ const Header = () => {
         justifyContent={'space-between'}
       >
         <Link href={'/'}>
-          <Heading>Goyo-Demo-Shop</Heading>
+          <Heading hideBelow={'md'}>Height of Coffee</Heading>
+          <Heading hideFrom={'md'}>H.O.G</Heading>
         </Link>
 
         <Flex alignItems={'center'}>
