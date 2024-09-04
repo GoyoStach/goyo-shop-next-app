@@ -1,20 +1,18 @@
 // app/fonts.ts
-import { M_PLUS_1p, Silkscreen } from 'next/font/google';
+import localFont from 'next/font/local';
 
-const silkscreen = Silkscreen({
-  subsets: ['latin'],
+const silkscreen = localFont({
+  src: '../../assets/fonts/Silkscreen.ttf',
   variable: '--font-silkscreen',
-  weight: ['400', '700'],
+  weight: '700',
   display: 'swap',
-  adjustFontFallback: false,
 });
 
-const mplus = M_PLUS_1p({
-  subsets: ['latin'],
+const mplus = localFont({
   display: 'swap',
-  adjustFontFallback: false,
   variable: '--font-mplus',
-  weight: ['100', '300', '400', '500', '700', '800', '900'],
+  weight: '1 1000',
+  src: '../../assets/fonts/MPLUS1p-Medium.ttf',
 });
 
 export const fonts = {
