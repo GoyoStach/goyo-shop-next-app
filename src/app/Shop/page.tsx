@@ -5,7 +5,7 @@ import { promises as fs } from 'fs';
 import { NextPage } from 'next';
 
 const getData = async () => {
-  await delay(2000);
+  await delay(5000);
   const mockData = await fs.readFile(
     process.cwd() + '/src/mockData/products.json',
     'utf8',

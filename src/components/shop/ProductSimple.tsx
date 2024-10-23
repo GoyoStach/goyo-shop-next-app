@@ -2,11 +2,11 @@ import { ProductSimple } from '@/types/Product.type';
 import {
   Box,
   Center,
-  useColorModeValue,
   Heading,
-  Text,
-  Stack,
   Image,
+  Stack,
+  Text,
+  useColorModeValue,
 } from '@chakra-ui/react';
 import Link from 'next/link';
 import type { FC } from 'react';
@@ -17,11 +17,15 @@ type Props = {
 
 const ProductSimpleComponent: FC<Props> = ({ product }) => {
   return (
-    <Center py={12}>
+    <Center
+      py={12}
+      h={'full'}
+    >
       <Link
         href={{
           pathname: `/Shop/${product.id}`,
         }}
+        className="h-full"
       >
         <Box
           role={'group'}
@@ -33,6 +37,7 @@ const ProductSimpleComponent: FC<Props> = ({ product }) => {
           rounded={'lg'}
           pos={'relative'}
           zIndex={1}
+          h={'full'}
         >
           <Box
             rounded={'lg'}

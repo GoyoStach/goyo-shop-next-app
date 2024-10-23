@@ -1,9 +1,9 @@
 'use client';
+import { ProductSimple } from '@/types/Product.type';
 import { zoomIn } from '@/utils/motion';
 import { Grid } from '@chakra-ui/react';
 import { motion } from 'framer-motion';
 import ProductSimpleComponent from './ProductSimple';
-import { ProductSimple } from '@/types/Product.type';
 
 type Props = {
   data: ProductSimple[];
