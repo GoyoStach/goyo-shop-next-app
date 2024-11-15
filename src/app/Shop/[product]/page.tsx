@@ -1,5 +1,7 @@
 import Product from '@/app/Shop/[product]/_Island/Product/Product';
+import SimilarProduct from '@/app/Shop/[product]/_Island/Product/SimilarProduct';
 import Loading from '@/app/Shop/loading';
+import { Container, Flex, Heading } from '@chakra-ui/react';
 import { type NextPage } from 'next';
 import { Suspense } from 'react';
 
@@ -12,6 +14,14 @@ const IndividualProductPage: NextPage = async () => {
       <Suspense fallback={<Loading />}>
         <Product />
       </Suspense>
+      <Flex direction="column">
+        <Container maxW={'6xl'}>
+          <Heading>Related Products :</Heading>
+          <Suspense fallback={<div>Loading...</div>}>
+            <SimilarProduct />
+          </Suspense>
+        </Container>
+      </Flex>
     </main>
   );
 };

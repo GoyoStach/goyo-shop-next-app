@@ -9,8 +9,8 @@ import {
   useColorModeValue,
   VisuallyHidden,
 } from '@chakra-ui/react';
-import { FaInstagram, FaTwitter, FaYoutube } from 'react-icons/fa';
 import type { ReactNode } from 'react';
+import { FaInstagram, FaTwitter, FaYoutube } from 'react-icons/fa';
 
 const Logo = () => {
   return (
@@ -101,7 +101,10 @@ const Footer = () => {
           justify={{ base: 'center', md: 'space-between' }}
           align={{ base: 'center', md: 'center' }}
         >
-          <Text>© 2023 Guillaume EXCOFFIER. All rights reserved</Text>
+          <Text>
+            © {new Date().getFullYear()} Guillaume EXCOFFIER. All rights
+            reserved
+          </Text>
           <Stack
             direction={'row'}
             spacing={6}
