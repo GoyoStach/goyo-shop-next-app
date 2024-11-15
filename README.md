@@ -32,11 +32,14 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 - [ ] Adapting everything to coffee
 - [ ] Landing Page
     - [x] Masthead
+        - Add image behing Shop & learn more
     - [x] 2 columns with Image ( https://chakra-templates.vercel.app/page-sections/features)
     - [x] Testimonials (https://chakra-templates.vercel.app/page-sections/testimonials)
     - [ ] Simple Grid with some products (4 Most popular)
     - [ ] Convert page to be PPR ready and optimized
 - [ ] Footer
+    - [ ] Change logo
+    - [ ] Dynamic year for copyright
 - [ ] Dashboard for connected user
     - [ ] Previous Commands
         - [ ] Table inside cards (https://v2.chakra-ui.com/docs/components/table/usage)
@@ -48,8 +51,8 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
     - [ ] Page with categories
     - [ ] Single page product
         - [x] Infos regarding the product.
-        - [ ] Loading squeleton for product
-        - [ ] Caroussel of images that will swap the main one.
-        - [ ] See more
+        - [x] Loading squeleton for product
+        - [ ] Caroussel of images that will swap the main one. ( Embla carroussel is really good )
+        - [ ] See more similar product.
         
 - [ ] Cart component
