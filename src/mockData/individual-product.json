@@ -30,5 +30,21 @@
     ],
     "name": "Coffee - Panda Brew Better",
     "previousPrice": "18",
-    "price": "12"
+    "price": "12",
+    "pricingDetails":[{
+          "size":"100",
+          "price":"12"
+        },
+        {
+          "size":"250",
+          "price":"24"
+        },{
+          "size":"500",
+          "price":"45"
+        },
+        {
+          "size":"1000",
+          "price":"80"
+        }
+      ]
 }

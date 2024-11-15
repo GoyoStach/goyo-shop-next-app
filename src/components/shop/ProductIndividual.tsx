@@ -3,23 +3,21 @@ import { ProductDetails } from '@/types/Product.type';
 import { InfoIcon } from '@chakra-ui/icons';
 import {
   Box,
+  Button,
   Center,
   Divider,
+  Flex,
   Grid,
   Heading,
   Icon,
   Image,
-  Slider,
-  SliderFilledTrack,
-  SliderMark,
-  SliderThumb,
-  SliderTrack,
   Stack,
   Text,
   useColorModeValue,
 } from '@chakra-ui/react';
 import { useState, type FC } from 'react';
 import { BiSolidCoffeeBean } from 'react-icons/bi';
+import { FaMinus, FaPlus, FaShoppingCart } from 'react-icons/fa';
 import { FaEarthAfrica, FaEarthAsia } from 'react-icons/fa6';
 import { GiCoffeePot, GiMountaintop } from 'react-icons/gi';
 
@@ -45,12 +43,11 @@ const mapValueToIcon = (value: string) => {
 };
 
 const ProductIndividual: FC<Props> = ({ data }) => {
-  const [sliderValue, setSliderValue] = useState<number>(2);
-  const labelStyles = {
-    mt: '2',
-    ml: '-2.5',
-    fontSize: 'sm',
-  };
+  const [amount, setAmount] = useState(1);
+  const [selectedSize, setSelectedSize] = useState({
+    size: '100',
+    price: '12',
+  });
   return (
     <Center p={12}>
       <Grid
@@ -123,10 +120,13 @@ const ProductIndividual: FC<Props> = ({ data }) => {
               fontWeight={800}
               fontSize={'xl'}
             >
-              {parseInt(data.price ?? '0') * sliderValue} {data.currency}
+              {parseInt(selectedSize.price ?? '0')} {data.currency}
             </Text>
-            <Text textDecoration={'line-through'}>
-              {data.previousPrice} {data.currency}
+            <Text
+              fontWeight={800}
+              fontSize={'x-small'}
+            >
+              for {selectedSize.size}g
             </Text>
           </Stack>
           <Text
@@ -195,65 +195,139 @@ const ProductIndividual: FC<Props> = ({ data }) => {
             })}
           </Grid>
         </Box>
-        <Box
-          width={'full'}
-          height={'full'}
-          paddingX={[2, 4, 6, 8, 10]}
-        >
-          <Heading
-            fontSize={'2xl'}
-            fontWeight={500}
-            justifyContent={'center'}
-            display={'flex'}
-            paddingY={[2, 4, 6, 8, 10]}
+
+        <Box pt={4}>
+          <Flex
+            direction={'column'}
+            alignItems={'start'}
+            justifyContent={'flex-end'}
+            h={'full'}
+            gap={4}
           >
-            Quantity
-          </Heading>
-          <Slider
-            aria-label="slider-ex-6"
-            onChange={(val) => setSliderValue(val)}
-            min={1}
-            max={4}
-            step={1}
-            defaultValue={2}
-          >
-            <SliderMark
-              value={1}
-              {...labelStyles}
+            <Divider
+              borderColor={useColorModeValue('cappucino.900', 'cappucino.100')}
+            />
+            <Stack
+              direction={'row'}
+              justifyContent={'space-between'}
+              w={'full'}
             >
-              250g
-            </SliderMark>
-            <SliderMark
-              value={2}
-              {...labelStyles}
+              <Heading>Size :</Heading>
+              <Stack
+                direction={'row'}
+                alignItems={'center'}
+              >
+                {data.pricingDetails.map((pricingPossibilities) => (
+                  <Stack
+                    p={2}
+                    w={'full'}
+                    direction={'row'}
+                    alignItems={'center'}
+                    justifyContent={'center'}
+                    backgroundColor={
+                      pricingPossibilities.size === selectedSize.size
+                        ? 'accent.300'
+                        : 'accent.500'
+                    }
+                    rounded={'lg'}
+                    as={Button}
+                    onClick={() => setSelectedSize(pricingPossibilities)}
+                    disabled={amount === 1}
+                    key={pricingPossibilities.price}
+                  >
+                    <Text>{pricingPossibilities.size}g</Text>
+                  </Stack>
+                ))}
+              </Stack>
+            </Stack>
+            <Stack
+              direction={'row'}
+              justifyContent={'space-between'}
+              w={'full'}
             >
-              500g
-            </SliderMark>
-            <SliderMark
-              value={3}
-              {...labelStyles}
+              <Heading>Quantity :</Heading>
+              <Stack
+                direction={'row'}
+                alignItems={'center'}
+              >
+                <Stack
+                  p={2}
+                  w={'full'}
+                  direction={'row'}
+                  alignItems={'center'}
+                  justifyContent={'center'}
+                  backgroundColor={'accent.500'}
+                  rounded={'lg'}
+                  as={Button}
+                  onClick={() => setAmount(amount - 1)}
+                  disabled={amount === 1}
+                >
+                  <FaMinus />
+                </Stack>
+                <Heading>{amount}</Heading>
+                <Stack
+                  p={2}
+                  w={'full'}
+                  direction={'row'}
+                  alignItems={'center'}
+                  justifyContent={'center'}
+                  backgroundColor={'accent.500'}
+                  as={Button}
+                  rounded={'lg'}
+                  onClick={() => setAmount(amount + 1)}
+                >
+                  <FaPlus />
+                </Stack>
+              </Stack>
+            </Stack>
+
+            <Divider
+              borderColor={useColorModeValue('cappucino.900', 'cappucino.100')}
+            />
+            <Stack
+              direction={'row'}
+              gap={8}
+              w={'full'}
             >
-              750g
-            </SliderMark>
-            <SliderMark
-              value={4}
-              {...labelStyles}
-            >
-              1Kg
-            </SliderMark>
-            <SliderTrack bg={'cappucino.100'}>
-              <SliderFilledTrack bg={'cappucino.500'} />
-            </SliderTrack>
-            <SliderThumb
-              boxSize={6}
-              bg={'cappucino.100'}
-            >
-              <Box
-                color="cappucino.500"
-                as={BiSolidCoffeeBean}
-              />
-            </SliderThumb>
-          </Slider>
+              <Stack
+                direction={'column'}
+                w={'full'}
+              >
+                <Heading>Total :</Heading>
+                <Heading fontSize={'xx-large'}>
+                  {parseInt(selectedSize.price) * amount}
+                  {data.currency}
+                </Heading>
+              </Stack>
+
+              <Stack
+                p={6}
+                w={'full'}
+                h={'full'}
+                direction={'row'}
+                alignItems={'center'}
+                justifyContent={'center'}
+                backgroundColor={'cappucino.500'}
+                rounded={'lg'}
+                as={Button}
+              >
+                <FaShoppingCart />
+                <Stack
+                  direction={'column'}
+                  gap={0}
+                  textAlign={'start'}
+                  maxW={'200px'}
+                >
+                  <Text
+                    fontSize={'lg'}
+                    overflow={'hidden'}
+                  >
+                    Add To Cart !
+                  </Text>
+                </Stack>
+              </Stack>
+            </Stack>
+          </Flex>
         </Box>
       </Grid>
     </Center>
