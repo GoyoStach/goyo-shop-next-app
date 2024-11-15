@@ -24,6 +24,7 @@ const ProductContent: React.FC<Props> = ({ data }) => {
     <Flex
       direction="column"
       minH={'calc(100vh)'}
+      paddingTop={8}
     >
       <Container maxW={'6xl'}>
         <Breadcrumb>

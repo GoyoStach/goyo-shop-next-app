@@ -1,4 +1,3 @@
-import { slideIn } from '@/utils/motion';
 import {
   Box,
   Button,
@@ -9,7 +8,6 @@ import {
   Text,
   createIcon,
 } from '@chakra-ui/react';
-import { motion } from 'framer-motion';
 import Link from 'next/link';
 
 const Masthead = () => {
@@ -26,10 +24,6 @@ const Masthead = () => {
             fontWeight={600}
             fontSize={{ base: '2xl', sm: '4xl', md: '6xl' }}
             lineHeight={'110%'}
-            initial="hidden"
-            as={motion.div}
-            variants={slideIn('left', 'Inertia', '0', '2')}
-            whileInView={'show'}
           >
             Coffee flavors
             <br />
@@ -57,11 +51,6 @@ const Masthead = () => {
             align={'center'}
             alignSelf={'center'}
             position={'relative'}
-            initial="hidden"
-            as={motion.div}
-            variants={slideIn('right', 'Inertia', '0', '2')}
-            whileInView={'show'}
-            // overflowX={'hidden'}
           >
             <Link href={'/Shop'}>
               <Button

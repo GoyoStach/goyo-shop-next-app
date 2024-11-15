@@ -4,16 +4,49 @@
         "name": "Coffee - Panda Brew Better",
         "brand": "Panda Brew Better",
         "price": "12",
+        "pricingDetails":[{
+          "size":"100",
+          "price":"12"
+        },
+        {
+          "size":"250",
+          "price":"24"
+        },{
+          "size":"500",
+          "price":"45"
+        },
+        {
+          "size":"1000",
+          "price":"80"
+        }
+      ],
         "currency": "$",
         "previousPrice": "18",
         "images": ["/coffee.jpg"]
       },
       {
+
         "id": 2,
         "name": "Herbal Tea",
         "brand": "Tea Relax",
         "price": "30",
         "currency": "$",
+        "pricingDetails":[{
+          "size":"100",
+          "price":"12"
+        },
+        {
+          "size":"250",
+          "price":"24"
+        },{
+          "size":"500",
+          "price":"45"
+        },
+        {
+          "size":"1000",
+          "price":"80"
+        }
+      ],
         "previousPrice": "90",
         "images": ["/tea.jpg"]
       }

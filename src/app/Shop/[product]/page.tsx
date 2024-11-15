@@ -1,4 +1,5 @@
 import Product from '@/app/Shop/[product]/_Island/Product/Product';
+import Loading from '@/app/Shop/loading';
 import { type NextPage } from 'next';
 import { Suspense } from 'react';
 
@@ -8,7 +9,7 @@ import { Suspense } from 'react';
 const IndividualProductPage: NextPage = async () => {
   return (
     <main>
-      <Suspense fallback={<p>Loading product details</p>}>
+      <Suspense fallback={<Loading />}>
         <Product />
       </Suspense>
     </main>

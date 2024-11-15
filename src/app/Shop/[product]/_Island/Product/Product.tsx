@@ -4,7 +4,7 @@ import { delay } from '@/utils/delay';
 import { promises as fs } from 'fs';
 
 const getData = async () => {
-  await delay(3000);
+  await delay(0);
   const mockData = await fs.readFile(
     process.cwd() + '/src/mockData/individual-product.json',
     'utf8',

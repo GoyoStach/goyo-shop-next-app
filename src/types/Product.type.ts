@@ -19,6 +19,10 @@ export type ProductDetails = {
   previousPrice?: string;
   images: string[];
   features: Feature[];
+  pricingDetails: {
+    size: string;
+    price: string;
+  }[];
 };
 
 type Feature = {
