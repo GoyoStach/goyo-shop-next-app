@@ -231,6 +231,7 @@ const ProductIndividual: FC<Props> = ({ data }) => {
                     }
                     rounded={'lg'}
                     as={Button}
+                    _hover={{ bgColor: 'accent.300' }}
                     onClick={() => setSelectedSize(pricingPossibilities)}
                     disabled={amount === 1}
                     key={pricingPossibilities.price}
@@ -260,7 +261,8 @@ const ProductIndividual: FC<Props> = ({ data }) => {
                   rounded={'lg'}
                   as={Button}
                   onClick={() => setAmount(amount - 1)}
-                  disabled={amount === 1}
+                  isDisabled={amount === 1}
+                  _hover={{ bgColor: 'accent.300' }}
                 >
                   <FaMinus />
                 </Stack>
@@ -275,6 +277,7 @@ const ProductIndividual: FC<Props> = ({ data }) => {
                   as={Button}
                   rounded={'lg'}
                   onClick={() => setAmount(amount + 1)}
+                  _hover={{ bgColor: 'accent.300' }}
                 >
                   <FaPlus />
                 </Stack>

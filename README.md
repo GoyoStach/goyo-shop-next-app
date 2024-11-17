@@ -30,6 +30,7 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 ## Pages Structure :
 - [ ] Adapting everything to coffee
+- [ ] FlavIcon & metadata
 - [ ] Landing Page
     - [x] Masthead
         - Add image behing Shop & learn more
@@ -53,6 +54,7 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
         - [x] Infos regarding the product.
         - [x] Loading squeleton for product
         - [ ] Caroussel of images that will swap the main one. ( Embla carroussel is really good )
-        - [ ] See more similar product.
+        - [/] See more similar product.
+            - Limit to 4. Single line
         
 - [ ] Cart component
