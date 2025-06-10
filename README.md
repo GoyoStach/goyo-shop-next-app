@@ -53,7 +53,7 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
     - [ ] Single page product
         - [x] Infos regarding the product.
         - [x] Loading squeleton for product
-        - [ ] Caroussel of images that will swap the main one. ( Embla carroussel is really good )
+        - [ ] Caroussel of images that will swap the main one. ( Embla carroussel is really good https://stackoverflow.com/questions/77335816/embla-carousel-doesnt-work-on-next-js-ssr)
         - [/] See more similar product.
             - Limit to 4. Single line
         
